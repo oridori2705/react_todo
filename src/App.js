@@ -31,7 +31,12 @@ export default class App extends Component{
       completed: false
     },
   ]
-  
+  handleClick=(id)=>
+  {
+    //this.todoData => this.state.todoDota로 바꿔줘야함 호출한 곳도 바꿔줘야함
+    let newTodoData = this.state.todoData.filter(data=>data.id !=id)
+    this.setState({todoData: newTodoData}); //todoData를 newTodoData로 업데이트
+  } 
   render(){
     return(
       <div calssName="container">
