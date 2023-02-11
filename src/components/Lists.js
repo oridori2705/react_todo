@@ -2,10 +2,8 @@ import React from 'react'
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import List from './List';
 
-export default function Lists({todoData,setTodoData}) {
-
-    
-    //result는 객체다.  
+const Lists = React.memo(({todoData,setTodoData}) => {
+  //result는 객체다.  
     // source : 원래 어디에 있었는지와 
     //destination : 어디로 이동하는지가  나오게 된다.
     const handleEnd=(result)=>{
@@ -57,4 +55,6 @@ export default function Lists({todoData,setTodoData}) {
             
         </div>
     )
-}
+})
+
+export default Lists;

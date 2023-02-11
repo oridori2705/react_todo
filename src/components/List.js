@@ -1,6 +1,9 @@
 import React from 'react'
 
-export default function List({id,title,completed,todoData,setTodoData,provided,snapshot}) {
+
+
+
+const List=React.memo(({id,title,completed,todoData,setTodoData,provided,snapshot}) => {
     const handleClick=(id)=>
     {
         //this.todoData => this.state.todoDota로 바꿔줘야함 호출한 곳도 바꿔줘야함
@@ -30,4 +33,6 @@ export default function List({id,title,completed,todoData,setTodoData,provided,s
             </div>
     </div>
   )
-}
+})
+
+export default List;
