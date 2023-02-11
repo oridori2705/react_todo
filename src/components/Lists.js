@@ -6,6 +6,7 @@ const Lists = React.memo(({todoData,setTodoData}) => {
   //result는 객체다.  
     // source : 원래 어디에 있었는지와 
     //destination : 어디로 이동하는지가  나오게 된다.
+    console.log(todoData)
     const handleEnd=(result)=>{
         if(!result.destination) return;
 
@@ -16,6 +17,7 @@ const Lists = React.memo(({todoData,setTodoData}) => {
 
         newTodoData.splice(result.destination.index,0,reorderedItem);
         setTodoData(newTodoData);
+        localStorage.setItem("todo",JSON.stringify(newTodoData))
     }
     return (
         <div>
